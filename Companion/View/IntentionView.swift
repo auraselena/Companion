@@ -1,13 +1,13 @@
 //
-//  SessionHopeView.swift
+//  HopeIntention.swift
 //  Companion
 //
-//  Created by Selena Aura on 15/04/25.
+//  Created by Selena Aura on 11/04/25.
 //
 
 import SwiftUI
 
-struct SessionHopeView: View {
+struct IntentionView: View {
     var body: some View {
         NavigationStack {
             ZStack {
@@ -20,8 +20,8 @@ struct SessionHopeView: View {
                                     
                     }
                 VStack {
-                    SetHopeView().padding(.top, 250)
-                    InputHopeView().padding(.top, 20)
+                    SetIntentionView().padding(.top, 200)
+                    InputIntentionView().padding(.top, 115)
                 }
             }
             .navigationBarBackButtonHidden(true)
@@ -29,28 +29,26 @@ struct SessionHopeView: View {
     }
 }
 
-struct SetHopeView: View {
+struct SetIntentionView: View {
     var body: some View{
         VStack (alignment: .leading) {
-            Text("Please share")
+            Text("Let's set")
                 .titleStyle()
-            HStack {
+            HStack{
                 Text("your")
                     .titleStyle()
-                Text("hope")
+                Text("intention.")
                     .titleStyle()
                     .italic()
             }
-            Text("for this session.")
-                .titleStyle()
         }
         
         
     }
 }
 
-struct InputHopeView: View {
-    @State var userHope: String = ""
+struct InputIntentionView: View {
+    @State var userIntention: String = ""
     var body: some View{
         ZStack {
             Rectangle()
@@ -63,17 +61,17 @@ struct InputHopeView: View {
                 .cornerRadius(30)
                 .padding(.top, -100)
             TextField(
-                "After this session ended, I want to feel...",
-                text: $userHope
+                "In this session, I want to work on...",
+                text: $userIntention
             )
             .multilineTextAlignment(.center)
             .padding(.top, -130)
-            NavigateToPreferenceView().padding(.top, 290)
+            NavigateToHopeView().padding(.top, 290)
         }
     }
 }
 
-struct NavigateToPreferenceView: View {
+struct NavigateToHopeView: View {
     
     @Environment(\.dismiss) var dismiss
     
@@ -95,7 +93,7 @@ struct NavigateToPreferenceView: View {
                 
                 NavigationLink {
                     // action: redirect to the next page
-                    PreferenceView()
+                    SessionHopeView()
                 } label: {
                     Text("Next")
                         .buttonTextSecondary()
@@ -111,5 +109,5 @@ struct NavigateToPreferenceView: View {
 }
 
 #Preview {
-    SessionHopeView()
+    IntentionView()
 }
