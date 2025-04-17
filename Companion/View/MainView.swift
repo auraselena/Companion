@@ -20,7 +20,7 @@ struct MainView: View {
                     }
                 VStack {
                     TextView().padding(.top, 200)
-                    ButtonView().padding(.top, 217)
+                    ButtonView().padding(.top, 200)
                 }
             }
         }.navigationBarBackButtonHidden(true)

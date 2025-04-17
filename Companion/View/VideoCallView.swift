@@ -23,21 +23,19 @@ struct VideoCallView: View {
                             .font(.system(size: 11, weight: .semibold, design: .default))
                             .foregroundColor(.white)
                         // Timer
-                        Text("00:14:02")
-                            .font(.system(size: 24, weight: .semibold, design: .default))
-                            .foregroundColor(.white)
+                        StopwatchView()
                     }
+                    .frame(width: 120)
                     HStack {
                         Button{
-                            // action: redirect to the next page
-        //                    dismiss()
+                            isMicOn.toggle()
                         } label: {
-                            Image(systemName: "microphone.fill")
-                                .buttonTextPrimary()
+                            Image(systemName: isMicOn ? "microphone.fill" : "microphone.slash.fill")
+                                .buttonOnOff(isMicOn)
                                 .frame(width: 59, height: 59)
                                 .background(
                                     RoundedRectangle(cornerRadius: 30)
-                                        .fill(Color.white)
+                                        .fill(isMicOn ? Color.white : Color.red)
                                 )
                         }
                         

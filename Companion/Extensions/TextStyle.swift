@@ -32,6 +32,7 @@ struct ButtonTextSecondaryStyle: ViewModifier{
     }
 }
 
+
 extension View {
     func titleStyle()
     -> some View {
@@ -47,4 +48,13 @@ extension View {
     -> some View {
         self.modifier(ButtonTextSecondaryStyle())
     }
+    
+    @ViewBuilder
+        func buttonOnOff(_ state: Bool) -> some View {
+            if state {
+                self.modifier(ButtonTextPrimaryStyle())
+            } else {
+                self.modifier(ButtonTextSecondaryStyle())
+            }
+        }
 }

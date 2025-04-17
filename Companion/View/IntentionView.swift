@@ -21,7 +21,7 @@ struct IntentionView: View {
                     }
                 VStack {
                     SetIntentionView().padding(.top, 200)
-                    InputIntentionView().padding(.top, 115)
+                    InputIntentionView().padding(.top, 95)
                 }
             }
             .navigationBarBackButtonHidden(true)

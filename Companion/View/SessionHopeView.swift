@@ -20,8 +20,8 @@ struct SessionHopeView: View {
                                     
                     }
                 VStack {
-                    SetHopeView().padding(.top, 250)
-                    InputHopeView().padding(.top, 20)
+                    SetHopeView().padding(.top, 200)
+                    InputHopeView().padding(.top, 50)
                 }
             }
             .navigationBarBackButtonHidden(true)
